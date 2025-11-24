@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigfoot Rides - Cast & Crew Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(196, 30, 58, 0.3);
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        header .date {
+            font-size: 1.4em;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .info-box {
+            background: #2a2a2a;
+            border: 3px solid #c41e3a;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+        
+        .info-box h2 {
+            color: #c41e3a;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #c41e3a;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        
+        .info-box textarea {
+            width: 100%;
+            min-height: 400px;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            border: 2px solid #444;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 1.375em;
+            font-family: inherit;
+            resize: vertical;
+        }
+        
+        .info-box textarea:focus {
+            outline: none;
+            border-color: #c41e3a;
+        }
+        
+        .save-btn {
+            background: #c41e3a;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        
+        .save-btn:hover {
+            background: #a01830;
+        }
+        
+        .section {
+            background: #2a2a2a;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        
+        .section-header {
+            background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+            padding: 20px 30px;
+            border-bottom: 3px solid #c41e3a;
+            text-align: center;
+        }
+        
+        .section-header h2 {
+            color: #c41e3a;
+            font-size: 1.8em;
+        }
+        
+        .section-header p {
+            margin-top: 10px;
+            font-size: 0.95em;
+            color: #e0e0e0;
+            font-weight: 400;
+        }
+        
+        .section-content {
+            padding: 30px;
+        }
+        
+        .contact-item {
+            background: #333;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #c41e3a;
+            display: flex;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        
+        .contact-item:hover {
+            background: #383838;
+        }
+        
+        .checkbox-container {
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .checkbox-container input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            accent-color: #c41e3a;
+        }
+        
+        .contact-details {
+            flex-grow: 1;
+        }
+        
+        .contact-details h3 {
+            color: #ff6b6b;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+        }
+        
+        .contact-details .role {
+            color: #aaa;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        
+        .contact-details .info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .contact-details .info div {
+            font-size: 0.95em;
+        }
+        
+        .contact-details .info strong {
+            color: #ff6b6b;
+        }
+        
+        .contact-details .info a {
+            color: #4fc3f7;
+            text-decoration: none;
+        }
+        
+        .contact-details .info a:hover {
+            text-decoration: underline;
+        }
+        
+        .creative-brief {
+            background: #2a2a2a;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        
+        .creative-brief h2 {
+            color: #c41e3a;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 3px solid #c41e3a;
+            padding-bottom: 10px;
+        }
+        
+        .creative-brief h3 {
+            color: #ff6b6b;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .creative-brief p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .narrative-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .narrative-table th {
+            background: #c41e3a;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .narrative-table td {
+            padding: 15px;
+            border-bottom: 1px solid #444;
+        }
+        
+        .narrative-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .narrative-table tr:hover {
+            background: #383838;
+        }
+        
+        .release-link {
+            background: #c41e3a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        
+        .release-link h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .release-link a {
+            display: inline-block;
+            background: white;
+            color: #c41e3a;
+            padding: 20px 50px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .release-link a:hover {
+            background: #f0f0f0;
+            transform: scale(1.05);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .checkbox-container {
+                margin-bottom: 15px;
+            }
+            
+            .contact-details .info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <img src="bigfoot-laughing.jpg" alt="Bigfoot" style="width: 120px; height: 120px; border-radius: 10px; border: 3px solid white;">
+            <div>
+                <h1>🎬 Bigfoot Rides Commercial</h1>
+                <div class="date">December 4th, 2025</div>
+                <div class="subtitle">Cast & Crew Information | <a href="/mnt/user-data/uploads/RGA_modelrelease.pdf" download style="color: #fff; text-decoration: underline;">Release Form</a></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Producer Information Box -->
+        <div class="info-box">
+            <h2>📋 Current Production Information</h2>
+            <p style="color: #27ae60; font-size: 1.3em; font-weight: 600; margin-bottom: 20px;">As Of Monday, November 25th</p>
+            <textarea id="producerNotes" placeholder="Enter current times, dates, location updates, and important information here...">Hi everyone. Thanks for your patience on this project. We're finally getting close to a shoot date, so I wanted to give you an update. I'll post all new information here as we get it, and I'll send text messages letting everyone know when to check this page for updates.
+
+As of now, the weather for December 4th looks good. That's a positive start. We're still confirming our exact location on Mount Pinos, but we expect to have that locked down by the end of this week.
+
+We're also still finalizing the call time. It will be sometime on the morning of December 4th, but we don't know the exact arrival time for cast or crew yet. I'll update that here as soon as it's set.
+
+Mount Pinos is about 70 miles from Ventura. As a rule of thumb, the drive time is roughly 1 hour 20 minutes to 1 hour 40 minutes depending on weather and road conditions. If it's raining, snowing, or anything that makes the roads unsafe, we will postpone. Travel costs will be factored in.
+
+Thanks again. I'll keep in touch via text and let you know when to check back.
+
+* Please check this page regularly. Additional information will be posted as we get closer to the shoot date.</textarea>
+            <button class="save-btn" onclick="saveNotes()">Save Updates</button>
+        </div>
+
+        <!-- Cast & Crew Section -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Core Crew</h2>
+                <p>Please check the box next to your name when you read these instructions so we know that each one of you have read these instructions and are up to date. It will keep us informed of who knows what and when.</p>
+            </div>
+            <div class="section-content">
+                <div class="contact-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="crew1" onchange="saveCheckbox('crew1')">
+                    </div>
+                    <div class="contact-details">
+                        <h3>Mike Miller</h3>
+                        <div class="role">Director / Producer</div>
+                        <div class="info">
+                            <div><strong>Phone:</strong> <a href="tel:818-426-2710">818-426-2710</a></div>
+                            <div><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#5b3632303e361b293e3f3c2e322f3a2975383436"><span class="__cf_email__" data-cfemail="472a2e2c222a0735222320322e3326356924282a">[email&#160;protected]</span></a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="crew2" onchange="saveCheckbox('crew2')">
+                    </div>
+                    <div class="contact-details">
+                        <h3>Chris Lombardo</h3>
+                        <div class="role">Line Producer / Safety Lead / First Aid</div>
+                        <div class="info">
+                            <div><strong>Phone:</strong> <a href="tel:805-479-6239">805-479-6239</a></div>
+                            <div><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#197a716b706a75596b7c7d7e6c706d786b377a7674"><span class="__cf_email__" data-cfemail="4f2c273d263c230f3d2a2b283a263b2e3d612c2022">[email&#160;protected]</span></a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="crew3" onchange="saveCheckbox('crew3')">
+                    </div>
+                    <div class="contact-details">
+                        <h3>Jorge Bailon</h3>
+                        <div class="role">Production Sound Mixer</div>
+                        <div class="info">
+                            <div><strong>Phone:</strong> <a href="tel:617-275-3270">617-275-3270</a></div>
+                            <div><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#1371727a7f7c7d7e66607a7053747e727a7f3d707c7e"><span class="__cf_email__" data-cfemail="ceacafa7a2a1a0a3bbbda7ad8ea9a3afa7a2e0ada1a3">[email&#160;protected]</span></a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="crew4" onchange="saveCheckbox('crew4')">
+                    </div>
+                    <div class="contact-details">
+                        <h3>Amber Zeimantz</h3>
+                        <div class="role">Makeup Artist / Stage 2 Specialist</div>
+                        <div class="info">
+                            <div><strong>Phone:</strong> <a href="tel:805-208-7341">805-208-7341</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cast Section -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Cast</h2>
+                <p style="margin-top: 10px; font-size: 0.95em; color: #e0e0e0; font-weight: 400;">Please check the box next to your name when you read these instructions so we know that each one of you have read these instructions and are up to date. It will keep us informed of who knows what and when.</p>
+            </div>
+            <div class="section-content">
+                <div class="contact-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="cast1" onchange="saveCheckbox('cast1')">
+                    </div>
+                    <div class="contact-details">
+                        <h3>Tony as "RONNIE"</h3>
+                        <div class="role">Lead Hunter #1</div>
+                        <div class="info">
+                            <div><strong>Phone:</strong> <a href="tel:805-231-4340">805-231-4340</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="cast2" onchange="saveCheckbox('cast2')">
+                    </div>
+                    <div class="contact-details">
+                        <h3>Lorraine Kaiser as "DARLENE"</h3>
+                        <div class="role">Hunter #2</div>
+                        <div class="info">
+                            <div><strong>Phone:</strong> <a href="tel:669-300-7420">669-300-7420</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="cast3" onchange="saveCheckbox('cast3')">
+                    </div>
+                    <div class="contact-details">
+                        <h3>Kyle as "CHAD"</h3>
+                        <div class="role">Hunter #3</div>
+                        <div class="info">
+                            <div><strong>Phone:</strong> <a href="tel:+1-805-861-8694">+1 (805) 861-8694</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Creative Brief -->
+        <div class="creative-brief">
+            <h2>📄 Creative Brief</h2>
+            
+            <h3>Core Creative Strategy</h3>
+            <p>The creative strategy for "Bigfoot Rides" is centered on a classic comedic structure that delivers a memorable punchline directly tied to the product's core attribute: overwhelming power. The narrative is built on a clear three-act comedy beat. The "Setup" introduces a trio of quirky Bigfoot hunters (RONNIE, DARLENE, and CHAD), establishing their earnest but amateurish mission. The "Twist" subverts expectations by revealing that one of the hunters is, in fact, Bigfoot himself. The "Punchline" lands when this formidable creature is shown to be driving RONNIE's truck seen at the beginning of the commercial with an utterly terrified RONNIE strapped and roped to the front of his own truck. In the final reveal, Bigfoot is now behind the wheel as he gives the camera a sly look, raises a victory fist and laughs as he speeds into the sunset. This structure ensures that the hero of the story is not just the mythical beast, but the unmistakable and awe-inspiring sound of the BORLA EXHAUST SYSTEM.</p>
+
+            <p>Over the course of the filming day, time will be specifically allotted for improv performances to extract funny moments, quirks, and general nuances to enhance the comedic impact of the scene. The mood is light and quirky, with RONNIE being the only character who displays fear, in the style of Tropic Thunder and Chaplin.</p>
+
+            <h3>Narrative Sequence Breakdown (1:00 Minute)</h3>
+            <table class="narrative-table">
+                <thead>
+                    <tr>
+                        <th>Panel</th>
+                        <th>Scene Description / Action</th>
+                        <th>Character Action / Dialogue Focus</th>
+                        <th>Stage & Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1-2. Setup</strong></td>
+                        <td>The three hunters (RONNIE, DARLENE, and CHAD) are huddled at a forest camp. Equipment is plastered with "Bigfoot Lives!" stickers.</td>
+                        <td>Establishing dialogue, ambient forest sounds. RONNIE is the Headphone Guy.</td>
+                        <td>Stage 1: Live Action (Chula Vista Campground).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3-4. Detection</strong></td>
+                        <td>RONNIE shrieks, reacting to a powerful sound. The group shows anticipation.</td>
+                        <td>RONNIE: "I think I got him!". RONNIE: "He sounds sooooo powerful".</td>
+                        <td>Stage 1: Live Action.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5-6. The Chase</strong></td>
+                        <td>RONNIE jumps up and runs off into the forest. DARLENE and CHAD grab the camera and chase through thick brush.</td>
+                        <td>RONNIE: "I'm gonna track him, grab the camera and follow my trail!". DARLENE: "Let's go!".</td>
+                        <td>Stage 1: Live Action. Handheld chase footage.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7. Source Revealed</strong></td>
+                        <td>Rear 3/4 view of the Ford F150 Raptor in the woods, engine revving.</td>
+                        <td>CRITICAL: BORLA EXHAUST - Hero sound moment.</td>
+                        <td>Stage 1: Live Action (Truck Reveal). Clean VFX plates required.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>8. Back at Camp</strong></td>
+                        <td>DARLENE and CHAD return to camp, confused by RONNIE's absence.</td>
+                        <td>CHAD: "Where the hell's Ronnie?".</td>
+                        <td>Stage 1: Live Action.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9. Ronnie's Terror</strong></td>
+                        <td>Extreme close-up of RONNIE's screaming face, zooming toward camera. RONNIE is the only one terrified.</td>
+                        <td>Screaming, engine roar (VFX Audio).</td>
+                        <td>Stage 2/3: VEO-3 VFX Shot.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10A. The Punchline (Hood)</strong></td>
+                        <td>RONNIE is strapped to the F150 Raptor hood, screaming, as the truck performs a burnout.</td>
+                        <td>BORLA EXHAUST prominent, tire screech, screaming.</td>
+                        <td>Stage 2/3: PRIMARY VFX COMPOSITE. Requires high frame rate plates.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10B/11. The Reveal (Driver)</strong></td>
+                        <td>Close-up of a hairy Bigfoot foot stomping the throttle. Reveal Bigfoot driving (VEO-3 enhanced), laughing, and raising a victory fist.</td>
+                        <td>Bigfoot laughter, BORLA EXHAUST roar.</td>
+                        <td>Stage 2/3: VEO-3 VFX Shots.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>12. Product Shot</strong></td>
+                        <td>Close-up of the gleaming Borla exhaust tip.</td>
+                        <td>BORLA EXHAUST sound continues.</td>
+                        <td>Stage 1: Live Action Product Shot.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>13. End Card</strong></td>
+                        <td>Final BORLA logo graphic.</td>
+                        <td>Final BORLA sound sting.</td>
+                        <td>Stage 3: Graphics.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Release Form Link -->
+        <div class="release-link">
+            <h2>📝 Model Release Form</h2>
+            <a href="/mnt/user-data/uploads/RGA_modelrelease.pdf" download>DOWNLOAD RELEASE FORM</a>
+            <p style="margin-top: 15px; font-size: 0.9em;">All cast members must complete and sign the release form before shooting.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Red Guitar Films</strong></p>
+        <p>Bigfoot Rides - BORLA Performance Exhaust Commercial</p>
+        <p style="margin-top: 10px; font-size: 0.85em;">For production use only. Confidential information.</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Load saved notes and checkboxes on page load
+        window.onload = function() {
+            const savedNotes = localStorage.getItem('producerNotes');
+            if (savedNotes) {
+                document.getElementById('producerNotes').value = savedNotes;
+            }
+            
+            // Load all checkbox states
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                const saved = localStorage.getItem(checkbox.id);
+                if (saved === 'true') {
