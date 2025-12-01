@@ -24,6 +24,56 @@
             margin: 0 auto;
         }
         
+        /* LOCATION ANNOUNCEMENT BANNER */
+        .location-announcement {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 6px 25px rgba(39, 174, 96, 0.4);
+            margin-bottom: 30px;
+            border-radius: 10px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 6px 25px rgba(39, 174, 96, 0.4); }
+            50% { box-shadow: 0 6px 35px rgba(39, 174, 96, 0.6); }
+        }
+        
+        .location-announcement h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+        }
+        
+        .location-announcement .shoot-info {
+            font-size: 1.5em;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+        
+        .location-announcement .location-btn {
+            display: inline-block;
+            background: white;
+            color: #27ae60;
+            padding: 18px 40px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .location-announcement .location-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+        
         header {
             background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
             padding: 40px 30px;
@@ -174,88 +224,90 @@
             font-size: 1.3em;
         }
         
-        .contact-details .role {
-            color: #aaa;
-            font-style: italic;
-            margin-bottom: 8px;
+        .role {
+            color: #ffa500;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
         }
         
-        .contact-details .info {
+        .info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 10px;
-            margin-top: 10px;
+            gap: 5px;
         }
         
-        .contact-details .info div {
-            font-size: 0.95em;
+        .info div {
+            font-size: 1.05em;
         }
         
-        .contact-details .info strong {
-            color: #ff6b6b;
+        .info strong {
+            color: #999;
+            margin-right: 8px;
         }
         
-        .contact-details .info a {
-            color: #4fc3f7;
+        .info a {
+            color: #66b3ff;
             text-decoration: none;
+            transition: color 0.2s;
         }
         
-        .contact-details .info a:hover {
+        .info a:hover {
+            color: #4d94ff;
             text-decoration: underline;
         }
         
         .creative-brief {
             background: #2a2a2a;
-            border-radius: 10px;
-            padding: 30px;
+            padding: 40px;
             margin-bottom: 30px;
+            border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
         
         .creative-brief h2 {
             color: #c41e3a;
-            margin-bottom: 20px;
             font-size: 2em;
+            margin-bottom: 30px;
             border-bottom: 3px solid #c41e3a;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
         
         .creative-brief h3 {
             color: #ff6b6b;
-            margin-top: 25px;
-            margin-bottom: 15px;
             font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
         }
         
         .creative-brief p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.05em;
             line-height: 1.8;
         }
         
         .narrative-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin-top: 20px;
             background: #333;
             border-radius: 8px;
             overflow: hidden;
         }
         
-        .narrative-table th {
+        .narrative-table thead {
             background: #c41e3a;
-            color: white;
+        }
+        
+        .narrative-table th {
             padding: 15px;
             text-align: left;
             font-weight: 600;
+            font-size: 1.1em;
         }
         
         .narrative-table td {
             padding: 15px;
-            border-bottom: 1px solid #444;
-        }
-        
-        .narrative-table tr:last-child td {
-            border-bottom: none;
+            border-top: 1px solid #444;
         }
         
         .narrative-table tr:hover {
@@ -263,49 +315,66 @@
         }
         
         .release-link {
-            background: #c41e3a;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            border-radius: 10px;
+            background: #2a2a2a;
+            padding: 40px;
             margin-bottom: 30px;
+            border-radius: 10px;
+            text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            border: 3px solid #c41e3a;
         }
         
         .release-link h2 {
-            font-size: 2.2em;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            color: #c41e3a;
+            margin-bottom: 20px;
+            font-size: 1.8em;
         }
         
         .release-link a {
             display: inline-block;
-            background: white;
-            color: #c41e3a;
-            padding: 20px 50px;
-            font-size: 1.5em;
-            font-weight: bold;
+            background: #c41e3a;
+            color: white;
+            padding: 15px 40px;
             text-decoration: none;
             border-radius: 5px;
-            transition: all 0.3s;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: background 0.3s;
         }
         
         .release-link a:hover {
-            background: #f0f0f0;
-            transform: scale(1.05);
+            background: #a01830;
         }
         
         footer {
-            text-align: center;
+            background: #1a1a1a;
             padding: 30px;
-            color: #888;
-            font-size: 0.9em;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 40px;
+            border-top: 3px solid #c41e3a;
+        }
+        
+        footer p {
+            margin: 5px 0;
         }
         
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.8em;
+            }
+            
+            .location-announcement h2 {
+                font-size: 1.5em;
+            }
+            
+            .location-announcement .shoot-info {
+                font-size: 1.2em;
+            }
+            
+            .location-announcement .location-btn {
+                font-size: 1.1em;
+                padding: 15px 30px;
             }
             
             .contact-item {
@@ -314,102 +383,129 @@
             }
             
             .checkbox-container {
-                margin-bottom: 15px;
+                margin-bottom: 10px;
             }
             
-            .contact-details .info {
-                grid-template-columns: 1fr;
+            .narrative-table {
+                font-size: 0.85em;
+            }
+            
+            .narrative-table th, .narrative-table td {
+                padding: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap;">
-            <img src="bigfoot-laughing.jpg" alt="Bigfoot" style="width: 120px; height: 120px; border-radius: 10px; border: 3px solid white;">
-            <div>
-                <h1>🎬 Bigfoot Rides Commercial</h1>
-                <div class="date">December 4th, 2025</div>
-                <div class="subtitle">Cast & Crew Information | <a href="RGA_modelrelease.pdf" download style="color: #fff; text-decoration: underline;">Release Form</a></div>
-            </div>
-        </div>
-    </header>
-
     <div class="container">
-        <!-- Producer Information Box -->
-        <div class="info-box">
-            <h2>📋 Current Production Information</h2>
-            <p style="color: #27ae60; font-size: 1.3em; font-weight: 600; margin-bottom: 20px;">As Of Monday, November 25th</p>
-            <textarea id="producerNotes" placeholder="Enter current times, dates, location updates, and important information here...">Hi Team,
-I wanted to give you a quick update on our production schedule.
-Good news: We're still on track for shooting next Thursday.
-Bad news: Once again, we're working through some challenges with securing our filming location. We've run into complications coordinating with the Los Padres Forestry Service regarding permits – the process has become more difficult than anticipated at this stage of production.
-As a result, we're pivoting to explore private land options and are actively in discussions with a property owner for our shoot next Thursday.
-We should have confirmation by end of day Monday on our final location.
-I appreciate your patience as we work through these logistics. Enjoy your weekend, and we'll have more details for you Monday evening.
-If you have any questions in the meantime, please don't hesitate to call me at 818-426-2710.
-Thank you for your flexibility and understanding.
-
-Mount Pinos is about 70 miles from Ventura. As a rule of thumb, the drive time is roughly 1 hour 20 minutes to 1 hour 40 minutes depending on weather and road conditions. If it's raining, snowing, or anything that makes the roads unsafe, we will postpone. Travel costs will be factored in.
-
-Thanks again. I'll keep in touch via text and let you know when to check back.
-
-* Please check this page regularly. Additional information will be posted as we get closer to the shoot date.</textarea>
-            <button class="save-btn" onclick="saveNotes()">Save Updates</button>
+        <!-- LOCATION SECURED BANNER -->
+        <div class="location-announcement">
+            <h2>🎬 LOCATION SECURED - WE'RE A GO! 🎬</h2>
+            <div class="shoot-info">
+                📅 Thursday, December 4th, 2024<br>
+                🕙 Call Time: 10:00 AM
+            </div>
+            <a href="shooting-location-directions.html" class="location-btn">
+                📍 VIEW SHOOTING LOCATION & DIRECTIONS
+            </a>
         </div>
 
-        <!-- Cast & Crew Section -->
+        <header>
+            <h1>🎥 BIGFOOT RIDES 🎥</h1>
+            <div class="date">BORLA Performance Exhaust Commercial</div>
+            <div class="subtitle">Cast & Crew Information Portal</div>
+        </header>
+
+        <!-- Producer Notes -->
+        <div class="info-box">
+            <h2>📝 Producer Notes & Updates</h2>
+            <textarea id="producerNotes" placeholder="Enter production notes, updates, and important information here...">Hi everyone,
+
+It looks like we're finally going to get this epic filmed and in the can this week! I want to thank everybody for your diligence and patience as we navigated location challenges since August.
+
+🎬 IMPORTANT INFORMATION:
+
+📍 LOCATION & DIRECTIONS
+I've included a link above with detailed driving instructions, call times, and general information for December 4th. Please review it carefully.
+
+⏰ CALL TIME: 10:00 AM at the meeting location
+
+🧥 WARDROBE INSTRUCTIONS:
+• Dress warm - think hiking attire
+• Temperature will be 55-60°F (chilly but sunny)
+• Wear LAYERS: jackets, hoodies, hats
+• BOTTOMS: Worn jeans and boots (you're playing people who live in the woods)
+• TOPS: We will provide shirts/tops for you
+• Questions about wardrobe? Text me anytime
+
+🍽️ MEALS & CRAFT SERVICES:
+• Lunch will be provided (sandwiches, snacks, drinks)
+• Water and refreshments on set
+• Well taken care of throughout the day
+
+🏠 ON-SET AMENITIES:
+• Heated cabin available for makeup and warming up
+• Professional makeup artist on site (Amber)
+• Comfortable holding area
+
+📱 QUESTIONS OR CONCERNS?
+We're in pre-production for the next two days, so feel free to call or text me anytime. I'll keep you updated via group chat or this website.
+
+Thanks again for your patience and professionalism. Let's make something great!
+
+- Mike</textarea>
+            <button class="save-btn" onclick="saveNotes()">💾 Save Notes</button>
+        </div>
+
+        <!-- Production Team -->
         <div class="section">
             <div class="section-header">
-                <h2>Core Crew</h2>
-                <p>Please check the box next to your name when you read these instructions so we know that each one of you have read these instructions and are up to date. It will keep us informed of who knows what and when.</p>
+                <h2>🎬 Production Team</h2>
+                <p>Key production contacts for this shoot</p>
             </div>
             <div class="section-content">
                 <div class="contact-item">
                     <div class="checkbox-container">
-                        <input type="checkbox" id="crew1" onchange="saveCheckbox('crew1')">
+                        <input type="checkbox" id="prod1" onchange="saveCheckbox('prod1')">
                     </div>
                     <div class="contact-details">
                         <h3>Mike Miller</h3>
                         <div class="role">Director / Producer</div>
                         <div class="info">
                             <div><strong>Phone:</strong> <a href="tel:818-426-2710">818-426-2710</a></div>
-                            <div><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#5b3632303e361b293e3f3c2e322f3a2975383436"><span class="__cf_email__" data-cfemail="472a2e2c222a0735222320322e3326356924282a">[email&#160;protected]</span></a></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-item">
                     <div class="checkbox-container">
-                        <input type="checkbox" id="crew2" onchange="saveCheckbox('crew2')">
+                        <input type="checkbox" id="prod2" onchange="saveCheckbox('prod2')">
                     </div>
                     <div class="contact-details">
                         <h3>Chris Lombardo</h3>
                         <div class="role">Line Producer / Safety Lead / First Aid</div>
                         <div class="info">
                             <div><strong>Phone:</strong> <a href="tel:805-425-4673">805-425-4673</a></div>
-                            <div><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#197a716b706a75596b7c7d7e6c706d786b377a7674"><span class="__cf_email__" data-cfemail="4f2c273d263c230f3d2a2b283a263b2e3d612c2022">[email&#160;protected]</span></a></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-item">
                     <div class="checkbox-container">
-                        <input type="checkbox" id="crew3" onchange="saveCheckbox('crew3')">
+                        <input type="checkbox" id="prod3" onchange="saveCheckbox('prod3')">
                     </div>
                     <div class="contact-details">
                         <h3>Jorge Bailon</h3>
                         <div class="role">Production Sound Mixer</div>
                         <div class="info">
                             <div><strong>Phone:</strong> <a href="tel:617-275-3270">617-275-3270</a></div>
-                            <div><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#1371727a7f7c7d7e66607a7053747e727a7f3d707c7e"><span class="__cf_email__" data-cfemail="ceacafa7a2a1a0a3bbbda7ad8ea9a3afa7a2e0ada1a3">[email&#160;protected]</span></a></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-item">
                     <div class="checkbox-container">
-                        <input type="checkbox" id="crew4" onchange="saveCheckbox('crew4')">
+                        <input type="checkbox" id="prod4" onchange="saveCheckbox('prod4')">
                     </div>
                     <div class="contact-details">
                         <h3>Amber Zeimantz</h3>
@@ -422,11 +518,11 @@ Thanks again. I'll keep in touch via text and let you know when to check back.
             </div>
         </div>
 
-        <!-- Cast Section -->
+        <!-- Cast List -->
         <div class="section">
             <div class="section-header">
-                <h2>Cast</h2>
-                <p style="margin-top: 10px; font-size: 0.95em; color: #e0e0e0; font-weight: 400;">Please check the box next to your name when you read these instructions so we know that each one of you have read these instructions and are up to date. It will keep us informed of who knows what and when.</p>
+                <h2>🎭 Cast Members</h2>
+                <p>Check the box once you've confirmed with each cast member</p>
             </div>
             <div class="section-content">
                 <div class="contact-item">
@@ -434,11 +530,11 @@ Thanks again. I'll keep in touch via text and let you know when to check back.
                         <input type="checkbox" id="cast1" onchange="saveCheckbox('cast1')">
                     </div>
                     <div class="contact-details">
-                        <h3>Tony Willard as "RONNIE"</h3>
-                        <div class="role">Lead Hunter #1</div>
+                        <h3>Mike as "RONNIE"</h3>
+                        <div class="role">Hunter #1 / Headphone Guy</div>
                         <div class="info">
-                            <div><strong>Phone:</strong> <a href="tel:805-231-4340">805-231-4340</a></div>
-                            <div><strong>Email:</strong> <a href="mailto:tonywillard80@gmail.com">tonywillard80@gmail.com</a></div>
+                            <div><strong>Phone:</strong> <a href="tel:818-264-1718">818-264-1718</a></div>
+                            <div><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#f69b9f9d9385959e8385829384859b9f829eb6919b979f9ad895999b"><span class="__cf_email__" data-cfemail="f79a9e9c9284949f8284839285849a9e839fb7909a969e9bd994989a">[email&#160;protected]</span></a></div>
                         </div>
                     </div>
                 </div>
@@ -465,7 +561,7 @@ Thanks again. I'll keep in touch via text and let you know when to check back.
                         <div class="role">Hunter #3</div>
                         <div class="info">
                             <div><strong>Phone:</strong> <a href="tel:+1-805-861-8694">+1 (805) 861-8694</a></div>
-                            <div><strong>Email:</strong> <a href="mailto:exile.acting@gmail.com">exile.acting@gmail.com</a></div>
+                            <div><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#e18a988d84a18499808c918d84cf828e8c"><span class="__cf_email__" data-cfemail="98f3e1f4fdd8fde0f9f5e8f4fdb6fbf7f5">[email&#160;protected]</span></a></div>
                         </div>
                     </div>
                 </div>
@@ -618,7 +714,14 @@ Thanks again. I'll keep in touch via text and let you know when to check back.
             }
             
             // Load all checkbox states
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            checkboxes.forEach(checkbox => {
-                const saved = localStorage.getItem(checkbox.id);
+            const checkboxIds = ['prod1', 'prod2', 'prod3', 'prod4', 'cast1', 'cast2', 'cast3'];
+            checkboxIds.forEach(id => {
+                const saved = localStorage.getItem(id);
                 if (saved === 'true') {
+                    document.getElementById(id).checked = true;
+                }
+            });
+        }
+        
+        function saveNotes() {
+     

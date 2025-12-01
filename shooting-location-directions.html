@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigfoot Commercial - Shooting Location Directions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #1a1a1a;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #2d2d2d;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        
+        h1 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        
+        .announcement-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .announcement-banner h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .announcement-banner p {
+            font-size: 1.1em;
+        }
+        
+        .shoot-date {
+            background: #27ae60;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .location-info {
+            background: #3a3a3a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .location-info h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        
+        .map-container {
+            margin: 30px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+        
+        .google-maps-link {
+            display: inline-block;
+            background: #4285f4;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .google-maps-link:hover {
+            background: #357abd;
+        }
+        
+        .directions-section {
+            margin-top: 30px;
+        }
+        
+        .directions-section h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .route-summary {
+            background: #3d3520;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .route-summary p {
+            margin: 5px 0;
+        }
+        
+        .directions-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .directions-list li {
+            counter-increment: step-counter;
+            margin-bottom: 20px;
+            padding-left: 60px;
+            position: relative;
+            min-height: 40px;
+        }
+        
+        .directions-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .important-note {
+            background: #e74c3c;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .important-note strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        
+        .tips-box {
+            background: #2a3d2a;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .tips-box h4 {
+            color: #7dff7d;
+            margin-bottom: 10px;
+        }
+        
+        .tips-box ul {
+            margin-left: 20px;
+        }
+        
+        .tips-box li {
+            margin: 5px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            .directions-list li {
+                padding-left: 50px;
+            }
+            
+            .directions-list li::before {
+                width: 35px;
+                height: 35px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Bigfoot Commercial - Production Update</h1>
+        
+        <div class="announcement-banner">
+            <h2>📍 LOCATION SECURED - WE'RE A GO!</h2>
+            <p>Cast & Crew: Please review all details below</p>
+        </div>
+        
+        <div class="shoot-date">
+            🗓️ SHOOT DATE: Thursday, December 4th, 2024<br>
+            🕙 CALL TIME: 10:00 AM
+        </div>
+        
+        <div class="location-info">
+            <h3>📌 Meeting Location</h3>
+            <p><strong>Mt. Pinos Vehicle Meeting Spot</strong></p>
+            <p>Cuddy Valley Road, Frazier Park, CA</p>
+            <p><em>Meeting spot is located at the intersection of Cuddy Valley Road and Mil Potrero Highway</em></p>
+        </div>
+        
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d26097.84238547076!2d-119.22984847431642!3d34.78663906799582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x80e9379d87a5dcd1%3A0x52ca522bce3ef5e9!2sVentura%2C%20CA!3m2!1d34.274638999999996!2d-119.2290316!4m5!1s0x80c1adeb7f8c8e95%3A0x5b6d7f8c8e9d8f9!2sCuddy%20Valley%20Rd%2C%20Frazier%20Park%2C%20CA%2093225!3m2!1d34.788753!2d-119.16163489999999!5e0!3m2!1sen!2sus!4v1733097600000!5m2!1sen!2sus"
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="https://www.google.com/maps/place/Mt+Pinos+Vehicle+Meeting+Spot/@34.8412914,-119.0878508,756m/data=!3m1!1e3!4m6!3m5!1s0x80e98cf0966b37b9:0x43e5ba6b52d1842d!8m2!3d34.841214!4d-119.0857486!16s%2Fg%2F11c3sr3s8c?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" class="google-maps-link" target="_blank">
+                🗺️ Open in Google Maps
+            </a>
+        </div>
+        
+        <div class="directions-section">
+            <h3>🚗 Driving Directions from Ventura, CA</h3>
+            
+            <div class="route-summary">
+                <p><strong>Distance:</strong> Approximately 70 miles</p>
+                <p><strong>Estimated Drive Time:</strong> 1 hour 30 minutes to 1 hour 45 minutes</p>
+                <p><strong>Route:</strong> CA-126 E → I-5 N → Frazier Mountain Park Rd → Cuddy Valley Rd</p>
+            </div>
+            
+            <ol class="directions-list">
+                <li>
+                    <strong>Start in Ventura</strong><br>
+                    Head east on Main Street toward CA-33 N/N Ventura Ave
+                </li>
+                
+                <li>
+                    <strong>Get on CA-126 E</strong><br>
+                    Take CA-126 E/Telegraph Road toward Santa Paula/Fillmore
+                    <br><em>Distance: ~15 miles</em>
+                </li>
+                
+                <li>
+                    <strong>Continue on CA-126 E</strong><br>
+                    Stay on CA-126 E through Santa Paula and Fillmore
+                    <br><em>Distance: ~20 miles</em>
+                </li>
+                
+                <li>
+                    <strong>Merge onto I-5 N</strong><br>
+                    Follow signs for I-5 N toward Sacramento/Bakersfield
+                    <br><em>Distance: ~18 miles</em>
+                </li>
+                
+                <li>
+                    <strong>RECOMMENDED STOP: Gorman (Optional)</strong><br>
+                    Gas stations and restrooms available at Gorman on I-5 N
+                    <br><em>Last convenient stop before heading into the mountains</em>
+                </li>
+                
+                <li>
+                    <strong>Exit at Frazier Park</strong><br>
+                    Take Exit 205 for Frazier Mountain Park Road toward Frazier Park
+                </li>
+                
+                <li>
+                    <strong>Turn left onto Frazier Mountain Park Rd</strong><br>
+                    Head west on Frazier Mountain Park Road
+                    <br><em>Distance: ~5 miles</em>
+                </li>
+                
+                <li>
+                    <strong>Turn right onto Cuddy Valley Rd</strong><br>
+                    Continue on Cuddy Valley Road heading northwest
+                    <br><em>Distance: ~7 miles</em>
+                </li>
+                
+                <li>
+                    <strong>Arrive at Meeting Spot</strong><br>
+                    Look for the vehicle meeting area at the intersection of Cuddy Valley Road and Mil Potrero Highway (near the Frontier Turnoff marker)
+                    <br><strong>GPS Coordinates:</strong> 34.7888° N, 119.1616° W
+                </li>
+            </ol>
+        </div>
+        
+        <div class="important-note">
+            <strong>⚠️ IMPORTANT REMINDERS:</strong>
+            <p>• Cell service may be limited in the area</p>
+            <p>• Bring warm layers - mountain temperatures can be significantly cooler</p>
+            <p>• Gas up at Gorman on I-5 - last easy stop before the mountains</p>
+        </div>
+        
+        <div class="tips-box">
+            <h4>📋 Helpful Tips for the Drive:</h4>
+            <ul>
+                <li><strong>Gas & Restrooms:</strong> Gorman on I-5 N is your best stop - multiple gas stations and facilities available</li>
+                <li><strong>Last Gas:</strong> After Gorman, next reliable gas is in Frazier Park</li>
+                <li><strong>Weather:</strong> Check mountain weather conditions before departing - roads can be affected by fog or ice</li>
+                <li><strong>Time of Day:</strong> Allow extra time if traveling during morning commute hours through Ventura/Santa Paula</li>
+                <li><strong>Landmarks:</strong> You'll know you're close when you see signs for "Los Padres National Forest"</li>
+                <li><strong>Meeting Point:</strong> Look for crew vehicles at the designated meeting spot marker</li>
+            </ul>
+        </div>
+        
+        <div class="location-info" style="margin-top: 30px;">
+            <h3>📞 Day-of Contact Information</h3>
+            <p><strong>Producer - Mike Miller:</strong> <a href="tel:818-426-2710">818-426-2710</a></p>
+            <p><strong>Chris Lombardo:</strong> <a href="tel:805-425-4673">805-425-4673</a></p>
+            <p><em>Note: Cell service may be spotty. If you cannot reach anyone, proceed to the meeting location.</em></p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #3a3a3a; color: #999;">
+            <p><strong>Red Guitar Films</strong></p>
+            <p>Bigfoot Commercial Production</p>
+            <p>See you on set! 🎥</p>
+        </div>
+    </div>
+</body>
+</html>
