@@ -398,23 +398,32 @@
 </head>
 <body>
     <div class="container">
-        <!-- LOCATION SECURED BANNER -->
-        <div class="location-announcement">
-            <h2>🎬 LOCATION SECURED - WE'RE A GO! 🎬</h2>
-            <div class="shoot-info">
-                📅 Thursday, December 4th, 2024<br>
-                🕙 Call Time: 10:00 AM
-            </div>
-            <a href="shooting-location-directions.html" class="location-btn">
-                📍 VIEW SHOOTING LOCATION & DIRECTIONS
-            </a>
-        </div>
-
+        <!-- MAIN HEADER AT TOP -->
         <header>
             <h1>🎥 BIGFOOT RIDES 🎥</h1>
             <div class="date">BORLA Performance Exhaust Commercial</div>
             <div class="subtitle">Cast & Crew Information Portal</div>
         </header>
+
+        <!-- TIMES, MAP & DIRECTIONS BANNER -->
+        <div class="location-announcement">
+            <h2>🎬 TIMES, MAP & DIRECTIONS 🎬</h2>
+            
+            <div class="shoot-info">
+                📅 Thursday, December 4th, 2024<br>
+                🕙 Call Time: 10:00 AM<br>
+                📍 Mt. Pinos Vehicle Meeting Spot<br>
+                Cuddy Valley Rd & Mil Potrero Hwy, Frazier Park, CA
+            </div>
+            <a href="shooting-location-directions.html" class="location-btn">
+                📍 VIEW FULL DIRECTIONS & DRIVING INSTRUCTIONS
+            </a>
+        </div>
+
+        <!-- CUSTOM MAP IMAGE -->
+        <div style="margin: 30px 0; text-align: center;">
+            <img src="camp_map3.jpg" alt="Location Map to Camp Tecuya" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.5);">
+        </div>
 
         <!-- Producer Notes -->
         <div class="info-box">
@@ -534,7 +543,7 @@ Thanks again for your patience and professionalism. Let's make something great!
                         <div class="role">Hunter #1 / Headphone Guy</div>
                         <div class="info">
                             <div><strong>Phone:</strong> <a href="tel:805-231-4340">805-231-4340</a></div>
-                            <div><strong>Email:</strong> <a href="mailto:tonywillard80@gmail.com">tonywillard80@gmail.com</a></div>
+                            <div><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#8afee5e4f3fde3e6e6ebf8eeb2bacaede7ebe3e6a4e9e5e7"><span class="__cf_email__" data-cfemail="6d190203141a0401010c1f09555d2d0a000c0401430e0200">[email&#160;protected]</span></a></div>
                         </div>
                     </div>
                 </div>
@@ -705,7 +714,7 @@ Thanks again for your patience and professionalism. Let's make something great!
         <p style="margin-top: 10px; font-size: 0.85em;">For production use only. Confidential information.</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Load saved notes and checkboxes on page load
         window.onload = function() {
             const savedNotes = localStorage.getItem('producerNotes');
@@ -715,13 +724,4 @@ Thanks again for your patience and professionalism. Let's make something great!
             
             // Load all checkbox states
             const checkboxIds = ['prod1', 'prod2', 'prod3', 'prod4', 'cast1', 'cast2', 'cast3'];
-            checkboxIds.forEach(id => {
-                const saved = localStorage.getItem(id);
-                if (saved === 'true') {
-                    document.getElementById(id).checked = true;
-                }
-            });
-        }
-        
-        function saveNotes() {
-     
+            checkboxIds.forEach(id => 
